@@ -26,15 +26,26 @@
 #include "button.h"
 
 #define initSting "EBBv13_and_above Protocol emulated by Eggduino-Firmware V1.6a"
+
+#define EN        8  
+//Direction pin
+#define X_DIR     5 
+#define Y_DIR     6
+#define Z_DIR     7
+//Step pin
+#define X_STP     2
+#define Y_STP     3 
+#define Z_STP     4 
+
 //Rotational Stepper:
-#define step1 2
-#define dir1 5
-#define enableRotMotor 8
+#define step1 X_STP
+#define dir1 X_DIR
+#define enableRotMotor EN
 #define rotMicrostep 4 //MicrostepMode, only 1,2,4,8,16 allowed, because of Integer-Math in this Sketch
 //Pen Stepper:
-#define step2 3
-#define dir2 6
-#define enablePenMotor 8
+#define step2 Y_STP
+#define dir2 Y_DIR
+#define enablePenMotor EN
 #define penMicrostep 4 //MicrostepMode, only 1,2,4,8,16 allowed, because of Integer-Math in this Sketch
 
 #define servoPin 4 //Servo
