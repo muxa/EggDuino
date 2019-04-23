@@ -43,4 +43,25 @@ http://wiki.evilmadscientist.com/Installing_software
 				#		self.svgSerialPort = strComPort
 				#		return serialPort
 		- In my version lines 1355-1360
- 
+
+# My Config
+
+## Inkscape Extensions 
+In `ebb_serial.py` add `port[1].startswith("Arduino Uno") or` on line 50:
+```python
+49		for port in comPortsList:
+50		 	if port[1].startswith("Arduino Uno") or port[1].startswith("EiBotBoard"):
+51				EBBport = port[0] 	#Success; EBB found by name match.
+52				break	#stop searching-- we are done.
+```
+
+Extension are located on `/Applications/Inkscape.app/Contents/Resources/share/inkscape/extensions/` on MacOS.
+
+## Stepper Driver Tuning
+
+Stepper drivers need to be tuned to output the right amount of current to the stepper motors so that they don't get too hot. 
+
+* A4988: `Imax = 2.4 x Vref` (with Rcs = 0,05 Ohm)
+* DRV8825: `Imax = 2 x Vref`
+
+My stepper are rated at 1.3A an i use A4988 drivers, so `Vref` should be `1.3 / 2.4 = 0.52V`.
