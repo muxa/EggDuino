@@ -115,12 +115,12 @@ void setPen(){
 	if (arg != NULL) {
 		cmd = atoi(arg);
 		switch (cmd) {
-			case 0:
+			case 1: // up
 				penServo.write(penUpPos);
 				penState=penUpPos;
 				break;
 
-			case 1:
+			case 0: // down
 				penServo.write(penDownPos);
 				penState=penDownPos;
 				break;
