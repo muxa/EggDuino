@@ -65,3 +65,5 @@ Stepper drivers need to be tuned to output the right amount of current to the st
 * DRV8825: `Imax = 2 x Vref`
 
 My stepper are rated at 1.3A an i use A4988 drivers, so `Vref` should be `1.3 / 2.4 = 0.52V`.
+
+More info: https://forum.arduino.cc/index.php?topic=415724.0
